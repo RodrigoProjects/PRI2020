@@ -1,0 +1,12 @@
+const t1 = gsap.timeline({defaults: {ease: "power1.out"}})
+
+t1.to(".greeting-text:nth-child(1)", { opacity: "100%", duration: 1})
+t1.to(".greeting-text:nth-child(2)", { opacity: "100%", duration: 1}, "-=0.5")
+t1.to(".greeting-text:nth-child(3)", { opacity: "100%", duration: 1}, "-=0.5")
+t1.to(".greeting-icon", { x: "800%", duration: 1}, "-=1")
+t1.to(".greeting-icon", { opacity: 0, duration: 1}, "-=1")
+t1.to(".greeting-text:nth-child(3)", { x: "5%", duration: 0.5}, "-=0.5")
+t1.to(".greeting-text:nth-child(1)", { y: "-60%", duration: 0.5, delay: 0.5}, "-=0.5")
+t1.to(".greeting-text:nth-child(2)", { y: "-60%", duration: 0.5}, "-=0.25")
+t1.to(".greeting-text:nth-child(3)", { y: "-60%", duration: 0.5}, "-=0.25")
+t1.to(".greeting-arrow", { opacity: "100%", duration: 1}, "-=0.5")
