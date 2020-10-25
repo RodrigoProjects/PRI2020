@@ -7,14 +7,14 @@
     <end_date>Outobro 2020</end_date>
     <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
     <work_team>
-        <elemento>
+        <element>
             <nome>Rodrigo da Silva Pimentel</nome>
             <numero>a83765</numero>
             <email>a83765@alunos.uminho.pt</email>
-        </elemento>
+        </element>
     </work_team>
     <abstract>
-        <paragraph> TPC com objetivo de praticar o uso de <bold>DTD</bold>s. <italic>Schema</italic> responsável por definir a estrutura de um <italic>project record</italic> e um ficheiro exemplo que respeite o <italic>schema</italic>.</paragraph>
+        <paragraph> TPC com objetivo de praticar o uso de <bold>DTD</bold>s. <italic>Schema</italic> responsável por definir a estrutura de um <italic>project record   </italic> e um ficheiro exemplo que respeite o <italic>schema</italic>.</paragraph>
     </abstract>
     <deliverables>
         <file path="./TPC2.xml">TPC2 XML Example</file>
