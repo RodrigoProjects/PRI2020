@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT project (key_name, title, subtitle?, begin_date, end_date, supervisor, work_team, abstract, deliverables)>
+
+<!ELEMENT key_name (#PCDATA)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT subtitle (#PCDATA)>
+
+<!ELEMENT begin_date (#PCDATA)>
+
+<!ELEMENT end_date (#PCDATA)>
+
+<!ELEMENT supervisor (#PCDATA)>
+<!ATTLIST supervisor 
+    url CDATA #IMPLIED>
+
+<!ELEMENT work_team (elemento)+ >
+<!ELEMENT elemento (nome, numero, email)>
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT abstract (paragraph)+ >
+<!ELEMENT paragraph (#PCDATA | bold | italic | underline | link)* >
+<!ELEMENT bold (#PCDATA)>
+<!ELEMENT italic (#PCDATA)>
+<!ELEMENT underline (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link 
+    url CDATA #REQUIRED>
+
+<!ELEMENT deliverables (file | folder)+ >
+<!ELEMENT file (#PCDATA)>
+<!ATTLIST file
+    url CDATA #REQUIRED>
+<!ELEMENT folder (file | folder)+ >
+<!ATTLIST folder
+    name CDATA #REQUIRED>
