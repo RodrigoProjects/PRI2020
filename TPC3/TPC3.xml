@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "file:/home/rodrigo/Desktop/4ano/PRI/PRI2020/TPC2/PR.dtd">
+<project>
+    <key_name>PRI2020_TPCS_3</key_name>
+    <title>TPC3 - DTD e XSL</title>
+    <begin_date>Outobro 2020</begin_date>
+    <end_date>Novembro 2020</end_date>
+    <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    <work_team>
+        <element>
+            <nome>Rodrigo da Silva Pimentel</nome>
+            <numero>a83765</numero>
+            <email>a83765@alunos.uminho.pt</email>
+        </element>
+    </work_team>
+    <abstract>
+        <paragraph> TPC com objetivo de praticar o uso de transformações em <bold>XSL</bold>. Criar um <italic>website</italic> a partir do <link url="ARQSITS.xml">ARQSITS.xml</link></paragraph>
+    </abstract>
+    <deliverables>
+        <file path="./TPC3.xml">TPC3 Project Record</file>
+        <file path="./ARQSITS.dtd">ARQSITS DTD</file>
+        <file path="./ARQ2HTML.xsl">XSL for ARQSITS</file>
+        <file path="./ARQSITS.xml">ARQSITS Data</file>
+        <folder name="site">
+            <file path="./ARQSITS.html">ARQSITS HTML</file>
+            <file path="./script.js">Script of ARQSITS site</file>
+        </folder>
+    </deliverables>
+</project>
+
