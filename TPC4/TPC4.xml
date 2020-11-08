@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+    <meta>
+        <key>PRI2020_TPCS_4</key>
+        <title>TPC4 - XSL(Multilevel index) and Node.js</title>
+        <bdate>Outobro 2020</bdate>
+        <edate>Novembro 2020</edate>
+        <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a83765">
+            <name>Rodrigo da Silva Pimentel</name>
+            <email>a83765@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> TPC com objetivo de praticar o uso de <b>node.js</b> e indices de multinivel em <b>XSL</b> . Criar websites para cada arqueossítio e servir os mesmo com um servidor em <b>node.js</b>.</p>
+    </abstract>
+    <deliverables>
+        <link url="./TPC4.xml">TPC4 Project Record</link>
+        <link url="./ARQSITS.dtd">ARQSITS DTD</link>
+        <link url="./TPC4.xsl">XSL for ARQSITS (Multilevel index)</link>
+        <link url="./ARQSITS.xml">ARQSITS Data</link>
+        <link url="./server/server.js">Node.js Server</link>
+    </deliverables>
+</pr>
+
