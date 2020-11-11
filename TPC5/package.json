@@ -1,0 +1,22 @@
+{
+  "name": "tpc5",
+  "version": "1.0.0",
+  "description": "Server for TPC5 (PRI2020)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Musica",
+    "Server",
+    "TPC",
+    "5",
+    "PRI2020"
+  ],
+  "author": "Rodrigo Pimentel (a83765)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
