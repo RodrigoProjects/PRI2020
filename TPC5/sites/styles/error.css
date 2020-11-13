@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title1{
+    margin-top: 6vh;
+}
+
+.title2{
+    margin-top: 3vh;
+}
