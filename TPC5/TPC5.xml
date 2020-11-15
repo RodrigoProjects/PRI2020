@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+    <meta>
+        <key>PRI2020_TPCS_5</key>
+        <title>TPC5 - Node server + Axios + json-server</title>
+        <bdate>Novembro 2020</bdate>
+        <edate>Novembro 2020</edate>
+        <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a83765">
+            <name>Rodrigo da Silva Pimentel</name>
+            <email>a83765@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> TPC com objetivo de praticar o uso de <b>node.js</b> e realizar pedidos HTTP com <b>Axios</b>. Foi utlizado o <b>json-server</b> para a partir de um ficherio JSON criar um API REST.</p>
+    </abstract>
+    <deliverables>
+        <link url="./TPC5.xml">TPC4 Project Record</link>
+        <link url="./sites/error.html">Error Page</link>
+        <link url="./sites/index.html">Index Page</link>
+        <link url="./package.json">Project metadata</link>
+        <link url="./sites/styles/error.css">Error page Style</link>
+        <link url="./sites/styles/index.css">Index page Style</link>
+        <link url="./server.js">Node.js Server</link>
+    </deliverables>
+</pr>
+
