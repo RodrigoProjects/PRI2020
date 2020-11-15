@@ -2,6 +2,9 @@ var http = require('http')
 var fs = require('fs')
 var axios = require('axios')
 
+// utf-8 charset.
+// axios.defaults.headers.common['charset'] = 'utf-8'
+
 // Server Port.
 const port = 3001
 
@@ -12,7 +15,7 @@ const port = 3001
     @param {Int} status_code
 */
 const send_response = (res ,content, content_type, status_code = 200) => {
-    res.writeHead(status_code, {'Content-Type': content_type})
+    res.writeHead(status_code, {'Content-Type': content_type, 'charset': 'utf-8'})
     res.end(content)
 }
 
@@ -55,6 +58,59 @@ const resp_file = (
     })
 }
 
+/*  
+    @param {String} url
+    @param {Function(resp)} success
+    @param {Function(err)} error
+*/
+const axios_get = (
+    url,
+    sucess = (resp) => {},
+    error = (err) => {console.log(err)}
+) => {
+    axios.get('http://localhost:3000' + url)
+    .then(rep => {
+        sucess(rep.data)
+
+    })
+    .catch(err => {
+        error(err)  
+    })
+}
+
+/*  
+    @param {String} title
+    @param {List} list
+    @param {String} name_field
+*/
+const mount_html_index = (title, list, name_field = "name") => {
+    var site = `<meta charset="UTF-8"><div style=\"display:flex; flex-direction: column; justify-content: center;align-items: center;\"><h1 style="margin-top: 3vh;">${title.charAt(0).toUpperCase() + title.slice(1)}</h1><form style="width: 17vw; height: 6vh; display:flex; justify-content: center;align-items: center;"><input style="width: 14vw; padding-top: 1vh;" name="q" type=\"test\"/><input value="Search"style="height: 3vh;"type=\"submit\"/></form><ul style="width: 20vw;">`
+
+    list.forEach(e => {
+        site += `<a href=\"http://localhost:3001/${title}/${e.id}\"><li>${e[name_field]}</li></a>`
+    })
+
+    site += '</ul></div>'
+    return site
+}  
+
+/*  
+    @param {String} title
+    @param {JSON} data
+*/
+const mount_html_desc_page = (title, data) => {
+    var site = `<meta charset="UTF-8"><div style=\"display:flex; flex-direction: column; justify-content: center;align-items: center;\"><h1 style=\"margin-top: 3vh;\">${title}</h1><dl style=\"width: 80%; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;\">`
+                    
+    for(const key of Object.keys(data)){
+        
+        site += "<div style=\"display:flex; flex-direction: column; align-items: center; justify-content: center;\"<dt><b>" + key + ":</b></dt><dd>" + (typeof(data[key]) == "string" ? data[key] : data[key]["#text"]) + "</dd></div>"
+    }
+
+    site += "</dl><a href=\"http://localhost:3001/\">Back Home</a>"
+
+    return site
+}
+
 // -----------------------------------------------------------------------
 
 // -------------------------------- SERVER -------------------------------
@@ -79,14 +135,101 @@ var servidor = http.createServer( (req, res) => {
             )
 
         } 
-        else if(req.url == '/alunos'){
+        else if(req.url.match(/^\/alunos\/[a-zA-Z][a-zA-Z0-9]*$/)){
+
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_desc_page("Aluno", data), 'text/html')
+                    log2console(req, 200, "Page sent")
+
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                    
+                }
+            )
 
         }
-        else if(req.url == '/instrumentos'){
+        else if(req.url.match(/^\/instrumentos\/[a-zA-Z][a-zA-Z0-9]*$/)){
+
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_desc_page("Instrumento", data), 'text/html')
+                    log2console(req, 200, "Page sent")
+
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                    
+                }
+            )
 
         }
-        else if(req.url == '/cursos'){
+        else if(req.url.match(/^\/cursos\/[a-zA-Z][a-zA-Z0-9]*$/)){
+
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_desc_page("Curso", data), 'text/html')
+                    log2console(req, 200, "Page sent")
+
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                    
+                }
+            )
+
+        }
+        else if(req.url.match(/^\/alunos(\?.*)?$/)){
             
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_index("alunos", data, "nome"), 'text/html')
+                    log2console(req, 200, "Page sent")
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                }
+            )
+
+        }
+        else if(req.url.match(/^\/instrumentos(\?.*)?$/)){
+
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_index("instrumentos", data, "#text"), 'text/html')
+                    log2console(req, 200, "Page sent")
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                }
+            )
+
+        }
+        else if(req.url.match(/^\/cursos(\?.*)?$/)){
+            
+            axios_get(
+                req.url,
+                (data) => {
+                    send_response(res, mount_html_index("cursos", data, "designacao"), 'text/html')
+                    log2console(req, 200, "Page sent")
+                },
+                (err) => {
+                    send_response(res, "Internal Server error", 'text', 500)
+                    log2console(req, 500, "GET request error")
+                }
+            )
+
         } 
         else if(req.url.match(/\/styles\/.*/)){
             
