@@ -1,0 +1,11 @@
+{
+    "supervisores": [
+        {
+            "id" : 1,
+            "nome" : "Rodrigo da Silva Pimentel"
+        }
+    ],
+    "tarefas": [
+
+    ]
+}

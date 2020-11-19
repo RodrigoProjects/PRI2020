@@ -1,0 +1,58 @@
+.addTodo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addTodo-title{
+    font-family: 'Modak', cursive;
+    font-size: 100px;
+    margin:40px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.addTodo-form{
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addTodo-color{
+    color:red;
+    
+}
+
+input[type=color].form-control {
+    height: 3.5vh;
+}
+
+.addTodo-plus{
+    margin-top: 2vh;
+    width: auto;
+    align-self: center;
+}
+
+.app{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+    margin-top: 4vh;
+}
+
+.todos-title{
+    margin-top: 4vh;
+    font-family: 'Modak', cursive;
+    font-size: 40px;
+}
