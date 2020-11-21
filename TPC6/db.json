@@ -1,11 +1,65 @@
 {
-    "supervisores": [
-        {
-            "id" : 1,
-            "nome" : "Rodrigo da Silva Pimentel"
-        }
-    ],
-    "tarefas": [
-
-    ]
+  "supervisores": [
+    {
+      "id": 1,
+      "nome": "Rodrigo da Silva Pimentel"
+    }
+  ],
+  "tarefas": [
+    {
+      "descricao": "Fazer Sopa",
+      "supervisor": {
+        "id": "1",
+        "nome": "Rodrigo da Silva Pimentel"
+      },
+      "color": "#0bf48f",
+      "timestamp": "2020-11-28 16:27",
+      "state": "Pending",
+      "id": 1
+    },
+    {
+      "descricao": "Lavar o carro",
+      "supervisor": {
+        "id": "1",
+        "nome": "Rodrigo da Silva Pimentel"
+      },
+      "color": "#278ee7",
+      "timestamp": "2020-11-30 19:26",
+      "state": "Pending",
+      "id": 2
+    },
+    {
+      "descricao": "REST API",
+      "supervisor": {
+        "id": "1",
+        "nome": "Rodrigo da Silva Pimentel"
+      },
+      "color": "#9320df",
+      "timestamp": "2020-12-23 20:30",
+      "state": "Pending",
+      "id": 3
+    },
+    {
+      "descricao": "Tese",
+      "supervisor": {
+        "id": "1",
+        "nome": "Rodrigo da Silva Pimentel"
+      },
+      "color": "#c2cc33",
+      "timestamp": "2021-01-01 00:00",
+      "state": "Pending",
+      "id": 4
+    },
+    {
+      "descricao": "Teste",
+      "supervisor": {
+        "id": "1",
+        "nome": "Rodrigo da Silva Pimentel"
+      },
+      "color": "#df2020",
+      "timestamp": "2020-11-26 18:29",
+      "state": "Pending",
+      "id": 5
+    }
+  ]
 }

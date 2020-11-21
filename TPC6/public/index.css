@@ -56,3 +56,21 @@ input[type=color].form-control {
     font-family: 'Modak', cursive;
     font-size: 40px;
 }
+
+.todo-list{
+    margin-top: 1vh;
+    width: 100%;
+    color: ligh
+}
+
+.todo-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-icon::before{
+    margin-right: 1.5vw;
+    cursor: pointer;
+}

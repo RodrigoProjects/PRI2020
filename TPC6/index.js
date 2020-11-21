@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, 'public'))) // Static files folder.
 app.set('view engine', 'pug') // Setting the default template engine.
 
 // Middleware for body parsing.
-app.use(bodyParser.urlencoded({ extended: false })) // Form post body
 app.use(bodyParser.json()) // JSON body parser
 
 app.use('/', routes) // Using external module routes.

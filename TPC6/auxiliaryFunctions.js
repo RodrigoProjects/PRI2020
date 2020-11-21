@@ -38,5 +38,64 @@ const axios_get = async (
 
 }
 
+/*  
+    @param {String} url
+    @param {JSON} data
+    @param {Function(res)} success
+    @param {Function(err)} error
+*/
+const axios_post = (url, data, success = (res) => {}, error = (err) => {}) => {
+    
+    axios.post('http://localhost:3000' + url, data, {headers: {
+        "Content-Type": "application/json"
+    }})
+      .then(function (response) {
+        success(response)
+      })
+      .catch(function (err) {
+        error(err);
+      });
+}
+
+/*  
+    @param {String} url
+    @param {JSON} data
+    @param {Function(res)} success
+    @param {Function(err)} error
+*/
+const axios_put = async (url, data, success = (res) => {}, error = (err) => {}) => {
+    
+    axios.put('http://localhost:3000' + url, data, {headers: {
+        "Content-Type": "application/json"
+    }})
+      .then(function (response) {
+        success(response)
+      })
+      .catch(function (err) {
+        error(err);
+      });
+}
+
+/*  
+    @param {String} url
+    @param {Function(res)} success
+    @param {Function(err)} error
+*/
+const axios_delete = (url, success = (res) => {}, error = (err) => {}) => {
+    
+    axios.delete('http://localhost:3000' + url, {headers: {
+        "Content-Type": "application/json"
+    }})
+      .then(function (response) {
+        success(response)
+      })
+      .catch(function (err) {
+        error(err);
+      });
+}
+
 exports.log2console = log2console
 exports.axios_get = axios_get
+exports.axios_post = axios_post
+exports.axios_put = axios_put
+exports.axios_delete = axios_delete
