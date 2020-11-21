@@ -28,7 +28,11 @@ $("#add-todo").click(function (e) {
             contentType: "application/json; charset=utf-8",
             success: function (response) {
                 update_todo_table()
+
+                let color_val = $('#color_input').val()
                 $('.addTodo-form').trigger("reset");
+                $('#color_input').val(color_val)
+
                 $(".add-alerts").empty().append(`<div class="alert alert-success" role="alert">
                 To-Do adicionado!
                 </div>`);
