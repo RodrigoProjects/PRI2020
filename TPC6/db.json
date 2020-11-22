@@ -14,7 +14,7 @@
       },
       "color": "#0bf48f",
       "timestamp": "2020-11-28 16:27",
-      "state": "Pending",
+      "state": "Finished",
       "id": 1
     },
     {
@@ -25,7 +25,7 @@
       },
       "color": "#278ee7",
       "timestamp": "2020-11-30 19:26",
-      "state": "Pending",
+      "state": "Canceled",
       "id": 2
     },
     {

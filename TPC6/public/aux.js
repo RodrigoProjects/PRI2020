@@ -19,10 +19,21 @@ function create_canceled_table_row(e){
     var td4 = document.createElement("td")
     td4.innerHTML = e.timestamp
 
+    var td5 = document.createElement("td")
+
+    var i4 = document.createElement("i")
+    i4.setAttribute("class", "fas fa-trash action-icon")
+    i4.setAttribute("id", "delete-task")
+    i4.setAttribute("style", "color: darkgoldenrod;")
+    i4.setAttribute("onClick", "deleteTodo("+ e.id +")")
+
+    td5.appendChild(i4)
+
     tr.appendChild(td1)
     tr.appendChild(td2)
     tr.appendChild(td3)
     tr.appendChild(td4)
+    tr.appendChild(td5)
 
     $("#insert-canceled").append(tr)
 }
@@ -48,10 +59,22 @@ function create_finished_table_row(e){
     var td4 = document.createElement("td")
     td4.innerHTML = e.timestamp
 
+    var td5 = document.createElement("td")
+
+    var i4 = document.createElement("i")
+    i4.setAttribute("class", "fas fa-trash action-icon")
+    i4.setAttribute("id", "delete-task")
+    i4.setAttribute("style", "color: darkgoldenrod;")
+    i4.setAttribute("onClick", "deleteTodo("+ e.id +")")
+
+    td5.appendChild(i4)
+
+
     tr.appendChild(td1)
     tr.appendChild(td2)
     tr.appendChild(td3)
     tr.appendChild(td4)
+    tr.appendChild(td5)
 
     $("#insert-finished").append(tr)
 }
@@ -95,8 +118,8 @@ function create_pending_table_row(e){
     i3.setAttribute("class", "fas fa-edit action-icon")
     i3.setAttribute("id", "edit-task")
     i3.setAttribute("style", "color: rgb(26, 83, 255);")
-    i3.setAttribute("data-toggle", "popover")
-    i3.setAttribute("data-content", "Teste!")
+    i3.setAttribute("onClick", "editModal(" + JSON.stringify(e) + ")")
+    
 
     var i4 = document.createElement("i")
     i4.setAttribute("class", "fas fa-trash action-icon")

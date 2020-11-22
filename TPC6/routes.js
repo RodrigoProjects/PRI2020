@@ -104,4 +104,24 @@ router.delete('/deleteTodo/:id', (req, res) => {
     
 })
 
+router.put('/editTodo/:id', async (req, res) => {
+    let id = req.params.id
+
+    let data = req.body
+
+    axios_put(
+        '/tarefas/' + id,
+        data,
+        (resp) => {
+            log2console(req, 200, "ToDo edited")
+            res.sendStatus(200)
+        },
+        (err) => {
+            log2console(req, 404, "To-Do does not exist")
+            res.sendStatus(404)
+        }
+    )
+    
+})
+
 module.exports = router
