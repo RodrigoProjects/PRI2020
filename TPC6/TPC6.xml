@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+    <meta>
+        <key>PRI2020_TPCS_6</key>
+        <title>SPA - ToDo App</title>
+        <bdate>Novembro 2020</bdate>
+        <edate>Novembro 2020</edate>
+        <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a83765">
+            <name>Rodrigo da Silva Pimentel</name>
+            <email>a83765@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> TPC com objetivo de desenvolver uma <b>SPA</b> (Single Page Application). O tema desenvolvido foi uma <i>ToDo Application</i>.</p>
+    </abstract>
+    <deliverables>
+        <link url="./TPC6.xml">TPC4 Project Record</link>
+        <link url="./views/index.pug">Index Page template (PUG)</link>
+        <link url="./db.json">Database (json-server)</link>
+        <link url="./package.json">Project metadata</link>
+        <link url="./public/app.js">Client Side Javascript</link>
+        <link url="./public/aux.js">Auxiliary Client Side Javascript</link>
+        <link url="./public/index.css">Index page styling</link>
+        <link url="./public/favicon.png">Favicon</link>
+        <link url="./public/jquery.js">JQuery Module</link>
+        <link url="./index.js">Express Server</link>
+        <link url="./routes.js">Express Routes</link>
+        <link url="./auxiliaryFunctions.js">Module with auxiliary functions for routing</link>
+    </deliverables>
+</pr>
+
