@@ -1,0 +1,51 @@
+extends layout
+
+
+
+block content
+    - var number_of_tpcs = alunos[0].tpcs.length
+    .app
+        .header
+            h1.display-3 PRI2020
+            span.text-muted.subtitle Gestão de Alunos
+
+        .actions
+            .input-group
+
+                input(type="text", class="search-input", placeholder="Search here...")
+
+                .input-group-append
+                    button(class="btn btn-outline-primary", disabled)
+                        i.fas.fa-search
+            
+            button.btn.btn-outline-success.btn-lg
+                i.fas.fa-plus
+
+        .cards
+            each aluno in alunos
+                div.card.border-dark.mb-3.card-aluno
+                    if aluno.avatar
+                        img(src='avatars/' + aluno.Avatar + '.webp', class="card-image")
+                    else
+                        img(src='avatars/' + aluno.Sexo + '.webp', class="card-image")
+
+                    .card-body
+                        ul.list-group.list-group-flush
+                            li.list-group-item.card-field
+                                i.fas.fa-signature 
+                                span.field #{aluno.Nome}
+
+                            li.list-group-item.card-field
+                                i.fas.fa-fingerprint 
+                                span.field #{aluno.Número}
+
+                            li.list-group-item.card-field
+                                i.fas.fa-venus-mars
+                                span.field #{aluno.Sexo} 
+
+                            li.list-group-item.card-field
+                                i.fas.fa-file-alt
+                                - let sum = aluno.tpcs.reduce((a, b) => a + b, 0)
+                                span.field #{sum}
+                                    span.text-muted #{' / ' + number_of_tpcs}
+
