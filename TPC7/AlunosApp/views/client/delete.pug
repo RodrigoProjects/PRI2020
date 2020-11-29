@@ -1,0 +1,28 @@
+.modal-header
+    h3 Quer mesmo apagar este aluno?
+
+.modal-body.details-body
+    if aluno.avatar
+        img(src='avatars/' + aluno.Avatar, class="card-image")
+    else
+        img(src='avatars/' + aluno.Sexo + '.webp', class="card-image")
+        
+    br
+
+    ul.list-group.list-group-flush.field-list
+        li.list-group-item.card-field
+            i.fas.fa-signature 
+            span.field #{aluno.Nome}
+
+        li.list-group-item.card-field
+            i.fas.fa-fingerprint 
+            span.field #{aluno.Número}
+
+        li.list-group-item.card-field
+            i.fas.fa-venus-mars
+            span.field #{aluno.Sexo}
+
+                
+.modal-footer
+    button(class="btn btn-outline-success", onClick="deleteAluno(\"" + aluno._id + "\")") Sim
+    button(class="btn btn-outline-danger", data-dismiss="modal") Não

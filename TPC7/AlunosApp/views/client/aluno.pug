@@ -1,0 +1,38 @@
+div.card.border-dark.mb-3.card-aluno
+    - var number_of_tpcs = 8
+    if aluno.Avatar != null
+        img(src='avatars/' + aluno.Avatar, class="card-image")
+    else
+        img(src='avatars/' + aluno.Sexo + '.webp', class="card-image")
+
+    .card-body
+        ul.list-group.list-group-flush.field-list
+            li.list-group-item.card-field
+                i.fas.fa-signature 
+                span.field #{aluno.Nome}
+
+            li.list-group-item.card-field
+                i.fas.fa-fingerprint 
+                span.field #{aluno.Número}
+
+            li.list-group-item.card-field
+                i.fas.fa-venus-mars
+                span.field #{aluno.Sexo} 
+
+            li.list-group-item.card-field
+                i.fas.fa-file-alt
+                - let sum = aluno.tpcs.reduce((a, b) => a + b, 0)
+                span.field #{sum}
+                    span.text-muted #{' / ' + number_of_tpcs}
+                            
+            li.list-group-item.card-field-social
+                i(class="far fa-eye fa-2x", style="color: blue; cursor: pointer;", onClick='descriptionModal(\"' + aluno._id + '\")')
+                i(class="far fa-edit fa-2x", style="color: purple; cursor: pointer;", onClick="editModal(\"" + aluno._id + "\")")
+                i(class="far fa-trash-alt fa-2x", style="color: darkgoldenrod; cursor: pointer;", onClick='deleteModal(\"' + aluno._id + '\")')
+
+                if aluno.Git != ""
+                    a(href=aluno.Git)
+                        i(class="fab fa-github fa-2x", style="color: black;cursor: pointer;")
+                
+                else 
+                    i(class="fab fa-github fa-2x", style="color: gray")

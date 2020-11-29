@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+const formidableMiddleware = require('express-formidable');
 
 // ---------- MONGODB CONNECTION ----------
 
@@ -22,6 +23,7 @@ db.once('open', function() {
 // ----------------------------------------
 
 var indexRouter = require('./routes/index');
+const { findOne } = require('./models/aluno');
 
 var app = express();
 
@@ -30,6 +32,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
+app.use(formidableMiddleware({
+  uploadDir: 'public/avatars/',
+},
+[
+  {
+    event: 'fileBegin',
+    action: function (req, res, next, name, file) {
+
+      file.path = file.path + "." + file.type.split('/')[file.type.split('/').length - 1]
+      
+    }
+  }
+]));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

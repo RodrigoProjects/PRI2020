@@ -1,0 +1,44 @@
+.modal-header
+    h3=aluno.Nome
+
+.modal-body.details-body
+    if aluno.Avatar
+        img(src='avatars/' + aluno.Avatar, class="card-image")
+    else
+        img(src='avatars/' + aluno.Sexo + '.webp', class="card-image")
+
+    br
+
+    ul.list-group.list-group-flush.field-list
+
+        li.list-group-item.card-field
+            i.fas.fa-fingerprint 
+            span.field #{aluno.Número}
+
+        li.list-group-item.card-field
+            i.fas.fa-venus-mars
+            span.field #{aluno.Sexo}
+        
+        li.list-group-item.card-field
+            i.fab.fa-github
+            a(class="field", href=aluno.Git)= aluno.Git
+
+        li.list-group-item.card-field
+            .detailsTpcs
+        
+                each tpc, i in aluno.tpcs
+                    if tpc == 1
+                        div.tpc
+                            b= 'TPC ' + (i+1) + ": "
+                            i(class="fas fa-check", style="color: green;")
+                    else
+                        div.tpc
+                            b= 'TPC ' + (i+1) + ": "
+                            i(class="fas fa-times", style="color: red;")
+
+    
+
+                
+
+.modal-footer
+    button(class="btn btn-outline-danger", data-dismiss="modal") Sair

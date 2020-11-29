@@ -49,17 +49,20 @@ body {
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .card-image{
-  width: 50%;
+  width: 8vw;
+  height: 12vh;
   margin-top: 1vh;
+  align-self: center;
+  border-radius: 50%;
 }
+
 
 .card-field{
   display: flex;
-
+  border-bottom: black solid 1px;
 }
 
 .field{
@@ -67,3 +70,43 @@ body {
   text-align: center;
 }
  
+.card-field-social{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: black solid 1px;
+}
+
+.detailsTpcs{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tpc{
+  width: 5vw;
+  margin-bottom: 2vh;
+  flex:2 0 21%;
+
+}
+
+.details-body{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.detailsNumero{
+  display: flex;
+}
+
+.image-preview{
+  width: 8vw;
+  height: 12vh;
+}
+
+.switches{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

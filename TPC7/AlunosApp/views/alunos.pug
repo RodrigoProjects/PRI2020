@@ -3,7 +3,6 @@ extends layout
 
 
 block content
-    - var number_of_tpcs = alunos[0].tpcs.length
     .app
         .header
             h1.display-3 PRI2020
@@ -12,40 +11,74 @@ block content
         .actions
             .input-group
 
-                input(type="text", class="search-input", placeholder="Search here...")
+                input(type="text", class="search-input",id="searchInput", placeholder="Search here...")
 
                 .input-group-append
                     button(class="btn btn-outline-primary", disabled)
-                        i.fas.fa-search
+                        i(class="fas fa-search")
             
-            button.btn.btn-outline-success.btn-lg
-                i.fas.fa-plus
+            button(class="btn btn-outline-success btn-lg", onClick="addModal()")
+                i(class="fas fa-plus")
 
-        .cards
-            each aluno in alunos
-                div.card.border-dark.mb-3.card-aluno
-                    if aluno.avatar
-                        img(src='avatars/' + aluno.Avatar + '.webp', class="card-image")
-                    else
-                        img(src='avatars/' + aluno.Sexo + '.webp', class="card-image")
+        div(class="cards", id="alunosContainer")
 
-                    .card-body
-                        ul.list-group.list-group-flush
-                            li.list-group-item.card-field
-                                i.fas.fa-signature 
-                                span.field #{aluno.Nome}
+    div(id="details", class="modal fade", tabindex="-1")
+        .modal-dialog.modal-dialog-centered
+            div(class="modal-content", id="detailsContent")
+    
+    div(id="delete", class="modal fade", tabindex="-1")
+        .modal-dialog.modal-dialog-centered
+            div(class="modal-content", id="deleteContent")
 
-                            li.list-group-item.card-field
-                                i.fas.fa-fingerprint 
-                                span.field #{aluno.Número}
+    div(id="edit", class="modal fade", tabindex="-1")
+        .modal-dialog.modal-dialog-centered
+            div(class="modal-content", id="editContent")
+    
+    div(id="add", class="modal fade", tabindex="-1")
+        .modal-dialog.modal-dialog-centered
+            div(class="modal-content", id="addContent")
+                .modal-header
+                    h3 Adicionar um Aluno
+                
+                .modal-body
+                    div(class="add-alerts", id="add-alerts")
 
-                            li.list-group-item.card-field
-                                i.fas.fa-venus-mars
-                                span.field #{aluno.Sexo} 
+                    form(id="addForm", enctype="multipart/form-data")
+                        .form-group
+                            label(for="avatar") Avatar (Not required):
+                            input(type="file", class="form-control-file", id="avatar", accept=".png,.jpeg,.jpg,.webp")
+                            img(hidden, class="image-preview", id="preview", style="margin-top: 2vh; border-radius: 50%;")
+                        
+                        .form-group
+                            label(for="nome") Nome:
+                            input(name="nome",type="text", class="form-control", id="nome")
+                        
+                        .form-group
+                            label(for="numero") Número:
+                            input(name="numero", type="text", class="form-control", id="numero")
 
-                            li.list-group-item.card-field
-                                i.fas.fa-file-alt
-                                - let sum = aluno.tpcs.reduce((a, b) => a + b, 0)
-                                span.field #{sum}
-                                    span.text-muted #{' / ' + number_of_tpcs}
+                        .form-group
+                            label(for="sexo") Sexo:
+                            select(name="sexo", type="select", class="custom-select", id="sexo")
+                                option(value="Masculino") Masculino
+                                option(value="Feminino") Feminino
+                                
+
+                        .form-group
+                            label(for="git") Git:
+                            input(name="git",type="text", class="form-control", id="git")
+
+                        each val in [1,2,3,4,5,6,7,8]
+                            .custom-control.custom-switch
+                                input(name="switch" + val, type="checkbox", class="custom-control-input", id="switch" + val, required, value="true")                                
+                                label(for="switch" + val, class="custom-control-label")= "TPC" + val
+
+                .modal-footer
+                    button(class="btn btn-outline-success", onClick="addAluno()") Adicionar
+                    button(class="btn btn-outline-danger", data-dismiss="modal") Sair
+
+        
+            
+                
+
 

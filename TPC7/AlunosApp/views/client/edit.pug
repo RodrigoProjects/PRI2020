@@ -1,0 +1,53 @@
+.modal-header
+    h3 Editar
+                
+.modal-body
+    div(class="edit-alerts", id="edit-alerts")
+
+    form(id="editForm", enctype="multipart/form-data")
+        .form-group
+            label(for="avatar") Avatar (Not required):
+            input(type="file", class="form-control-file", id="editAvatar", accept=".png,.jpeg,.jpg,.webp")
+            if aluno.Avatar
+                img(class="image-preview", id="editPreview", style="margin-top: 2vh; border-radius: 50%;", src="/avatars/" + aluno.Avatar)
+            
+            else
+                img(class="image-preview", id="editPreview", style="margin-top: 2vh; border-radius: 50%;", src="/avatars/" + aluno.Sexo + ".webp")
+        .form-group
+            label(for="nome") Nome:
+            input(name="nome",type="text", class="form-control", id="editNome", value=aluno.Nome)
+                        
+        .form-group
+            label(for="numero") Número:
+            input(name="numero", type="text", class="form-control", id="editNumero", value=aluno.Número)
+
+        .form-group
+            label(for="sexo") Sexo:
+            select(name="sexo", type="select", class="custom-select", id="editSexo", selected=aluno.Sexo)
+                if aluno.Sexo == "Masculino"
+                    option(value="Masculino") Masculino
+                    option(value="Feminino") Feminino
+                else 
+                    option(value="Feminino") Feminino
+                    option(value="Masculino") Masculino
+
+
+        .form-group
+            label(for="git") Git:
+            input(name="git",type="text", class="form-control", id="editGit", value=aluno.Git)
+
+        each val, i in aluno.tpcs
+            if val == 0
+                .custom-control.custom-switch
+                    input(name="switch" + (i + 1), type="checkbox", class="custom-control-input", id="editSwitch" + (i + 1))                                
+                    label(for="editSwitch" + (i + 1), class="custom-control-label")= "TPC" + (i + 1)
+
+
+            else
+                .custom-control.custom-switch
+                    input(name="switch" + (i + 1), type="checkbox", class="custom-control-input", id="editSwitch" + (i + 1), checked)                                
+                    label(for="editSwitch" + (i + 1), class="custom-control-label")= "TPC" + (i + 1)
+
+.modal-footer
+    button(class="btn btn-outline-success", onClick="editAluno(\"" + aluno._id +"\")" ) Editar
+    button(class="btn btn-outline-danger", data-dismiss="modal") Sair
