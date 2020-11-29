@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+    <meta>
+        <key>PRI2020_TPCS_7</key>
+        <title>SPA - ToDo App</title>
+        <bdate>Novembro 2020</bdate>
+        <edate>Novembro 2020</edate>
+        <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a83765">
+            <name>Rodrigo da Silva Pimentel</name>
+            <email>a83765@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> TPC com objetivo de desenvolver uma <b>SPA</b> (Single Page Application). O tema desenvolvido foi um <i>Gestor de Alunos</i> para PRI2020.</p>
+    </abstract>
+    <deliverables>
+        <link url="./TPC7.xml">TPC4 Project Record</link>
+        <link url=".AlunosApp/views/">Project Views</link>
+        <link url=".AlunoApp/package.json">Project metadata</link>
+        <link url=".AlunosApp/public/">Static files</link>
+        <link url=".AlunosApp/bin/www.js">Express Server</link>
+        <link url=".AlunosApp/routes/">Route Folder</link>
+        <link url=".AlunosApp/models/">Models Folder</link>
+        <link url=".AlunosApp/controllers/">Controllers Folder</link>
+        <link url=".AlunosApp/populateMongo.js">Populate the db</link>
+        <link url=".AlunosApp/app.js">Express Configuration</link>
+    </deliverables>
+</pr>
+
+1
