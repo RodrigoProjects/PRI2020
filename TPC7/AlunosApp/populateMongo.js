@@ -125,3 +125,5 @@ alunoModel.create(data)
         db.close()
     })
     .catch(e => console.log(e))
+
+    
