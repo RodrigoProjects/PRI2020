@@ -1,0 +1,74 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1vh;
+  padding-bottom: 2.2vh;
+  width: 92%;
+  border-bottom: 1px solid gray;
+}
+
+.subtitle{
+  font-size: 1.2vw;
+}
+
+.actions{
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%;
+}
+
+.files {
+  margin-top: 2vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.filesForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.forms{
+  width: 90%;
+}
+
+.plusOne{
+  margin-top: 2vh;
+  width: 40%;
+}
+
+.formCard{
+  margin-top: 2vh;
+}
+
+.cardAction{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addButtons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

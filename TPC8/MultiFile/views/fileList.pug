@@ -1,0 +1,61 @@
+extends layout
+
+
+
+block content
+    .app
+        .header
+            h1.display-3 PRI2020
+            span.text-muted.subtitle Gestão de Ficheiros
+
+        .actions
+            button(class="btn btn-outline-success btn-lg", onClick="addModal()")
+                i(class="fas fa-plus")
+
+        div(class="files", id="filesContainer")
+            div(id="alertsContainer")
+
+            table.table.table-hover
+                thead.thead-dark
+                    th #
+                    th Nome
+                    th Tamanho (bits)
+                    th Data e Hora (Upload)
+                    th Descrição
+                
+                tbody(id="files")
+
+    div(id="add", class="modal fade", tabindex="-1")
+        .modal-dialog.modal-dialog-centered
+            div(class="modal-content", id="addContent")
+                .modal-header
+                    h1.display-5 Adicionar Ficheiro
+                
+                .modal-body
+                    .filesForm
+                        div(id="add-alerts")
+                        form(class="forms", id="addForm", method="POST")
+                            .card.bg-light
+                                .card-body
+
+                                        .form-group
+                                            label(for="Descricao") Descrição:
+                                            input(class="form-control", id="Descricao", type="text", name="descricao", required)
+
+                                        .form-group
+                                            label(for="File") Ficheiro:
+                                            input(class="form-control-file", id="File", type="file", name="ficheiro", required)
+
+                            div(id="moreFiles")
+                            .addButtons
+                                button(type="button", class="btn btn-dark plusOne", onClick="addFileForm()") +1
+                                button(class="btn btn-success plusOne", type="submit") Adicionar 
+                .modal-footer
+                    
+                    button(class="btn btn-danger", data-dismiss="modal") Sair
+
+        
+            
+                
+
+
