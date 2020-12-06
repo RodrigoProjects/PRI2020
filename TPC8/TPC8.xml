@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pr>
+    <meta>
+        <key>PRI2020_TPCS_8</key>
+        <title>Multiple Files Upload App</title>
+        <bdate>Dezembro 2020</bdate>
+        <edate>Dezembro 2020</edate>
+        <supervisor url="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a83765">
+            <name>Rodrigo da Silva Pimentel</name>
+            <email>a83765@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p> TPC com o objetivo de desenvolver uma aplicação que consiga manusear ficheiros, com uploads multiplos ou singulares.</p>
+    </abstract>
+    <deliverables>
+        <link url="./TPC0.xml">TPC8 Project Record</link>
+        <link url=".MultiFile/views/">Project Views</link>
+        <link url=".MultiFile/package.json">Project metadata</link>
+        <link url=".MultiFile/public/">Static files</link>
+        <link url=".MultiFile/bin/www.js">Express Server</link>
+        <link url=".MultiFile/routes/">Route Folder</link>
+        <link url=".MultiFile/app.js">Express Configuration</link>
+    </deliverables>
+</pr>
+
+1
