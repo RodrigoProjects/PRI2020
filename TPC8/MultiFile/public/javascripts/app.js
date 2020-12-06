@@ -21,7 +21,18 @@ function updateFiles(){
                 `)
             } else {
                 response.forEach(e => {
-                    console.log("Aluno")
+                    let html = `
+                    <tr onClick="showFile('${e.filename}', '${e.type}')" style="cursor: pointer;">
+                        <td> <i class="far fa-file-alt"/> </td>
+                        <td>${e.filename}</td>
+                        <td>${e.size}</td>
+                        <td>${e.timestamp}</td>
+                        <td>${e.type}</td>
+                        <td>${e.descricao}</td>
+                    </tr>
+                `
+
+                    $('#files').append($(html))
                 });
             }
         },
@@ -94,3 +105,50 @@ $('#addForm').submit((e) => {
 })
     
 
+
+function showFile(name, mime){
+    $('#showContent').empty()
+    
+    if(mime == 'image/jpeg'){
+        var html = `
+        <div class="modal-header">
+            <div class="flex-header">
+                <h5>${name}</h5>
+                <div>
+                    <a href="http://localhost:7700/files/download/${name}"<i class="fas fa-download fa-2x"/></a>
+                    <i class="fas fa-times fa-2x" data-dismiss="modal" style="color: darkgray; cursor: pointer; margin-left: 1vw;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img class="imageShow" src="fileStore/${name}"/>
+        </div>
+    
+    `
+
+        
+    } else {
+        var html = `
+        <div class="modal-header">
+            <div class="flex-header">
+                <h5>${name}</h5>
+                <div>
+                    <a href="http://localhost:7700/files/download/${name}"<i class="fas fa-download fa-2x"/></a>
+                    <i class="fas fa-times fa-2x" data-dismiss="modal" style="color: red; cursor: pointer; margin-left: 1vw;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+        <div class="alert alert-warning" role="alert">
+        Este formato (${mime}) ainda não é suportado para visualização!
+      </div>
+        </div>
+`
+    }
+    
+
+    $('#showContent').append($(html))
+    $('#show').modal('show')
+
+
+}

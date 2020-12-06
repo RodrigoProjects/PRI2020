@@ -72,3 +72,14 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+
+.flex-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageShow{
+  height: auto;
+  width: 100%;
+}
